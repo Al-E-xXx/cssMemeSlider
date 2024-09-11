@@ -66,7 +66,7 @@
 
 .header__title {
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(0.5rem, calc(0.5rem + (32 - 8) * ((100vw - 20rem) / (896 - 320))), 2rem);
   font-weight: 400;
 }
 
@@ -153,7 +153,8 @@
   grid-row-start: 1;
   transform: translateX(100%);
   transition: var(--transition-time);
-
+  margin-top: clamp(0rem, calc(0rem + (16 - 0) * ((100vw - 20rem) / (480 - 320))), 1rem);
+  margin-bottom: clamp(0rem, calc(0rem + (16 - 0) * ((100vw - 20rem) / (480 - 320))), 1rem);
 }
 
 .slider__controls-wrapper {
@@ -239,5 +240,16 @@
   .slider__control:active .slider__control-circle {
     background-color: #bcbcde;
     border: 0.0625rem solid #bcbcde;
+  }
+}
+
+@media only screen and (width <= 40rem) {
+  .slider__info-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .slider__text-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
