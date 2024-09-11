@@ -7,9 +7,22 @@
     url('./../fonts/arial/arial-regular.woff2') format('woff2');
 }
 
+/*--- Vars ---*/
 :root {
   --transition-time: 0.4s ease;
   --body-paddings: clamp(0.25rem, calc(0.25rem + (48 - 4) * ((100vw - 20rem) / (1280 - 320))), 3rem);
+}
+
+/*--- Animations ---*/
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 *,
@@ -45,6 +58,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   color: #ffffff;
   backdrop-filter: blur(0.125rem);
   -webkit-backdrop-filter: blur(0.125rem);
@@ -131,6 +145,17 @@
   overflow: hidden;
 }
 
+.slider__text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transform: translateX(100%);
+  transition: var(--transition-time);
+
+}
+
 .slider__controls-wrapper {
   display: flex;
   flex-shrink: 0;
@@ -157,6 +182,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 2rem;
 }
 
 .footer__copyright {
@@ -187,6 +213,20 @@
 #r7:checked ~ .slider__info-wrapper .slider__controls-wrapper .slider__control:nth-child(7) .slider__control-circle {
   background-color: transparent;
   border: 0.0625rem solid #71abfe;
+}
+
+#r1:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(1),
+#r2:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(2),
+#r3:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(3),
+#r4:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(4),
+#r5:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(5),
+#r6:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(6),
+#r7:checked ~ .slider__info-wrapper .slider__text-wrapper .slider__text:nth-child(7) {
+  animation-name: slide-left;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 /*--- Media Queries ---*/
