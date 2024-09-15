@@ -25,9 +25,7 @@
   }
 }
 
-*,
-*::before,
-*::after {
+* {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   box-sizing: border-box;
@@ -234,7 +232,7 @@
 @media (hover: hover) and (pointer: fine) {
   .slider__control:hover .slider__control-circle {
     background-color: #ffffff;
-    border: 0.0625rem solid #ffffff;
+    border: 0.0625rem solid #ffffff !important;
   }
 
   .slider__control:active .slider__control-circle {
