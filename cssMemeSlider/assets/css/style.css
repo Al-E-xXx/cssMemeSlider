@@ -13,6 +13,14 @@
   font-style: normal;
 }
 
+/* Variables */
+:root {
+  --main-color: #ffffff;
+  --main-bg-color: #25282a;
+  --second-bg-color: #c5c5c5;
+  --border-color: #383838;
+}
+
 /* General Styles */
 * {
   /*--- Disable outline light on touchscreen devices ---*/
@@ -34,5 +42,61 @@
 }
 
 body {
-  background-color: rgb(121, 121, 121);
+  width: 100%;
+  min-width: 22.5rem;
+  font-family: 'OpenSans';
+  font-weight: 400;
+  background-color: var(--second-bg-color);
+  background-image: url(./../img/bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--main-color);
+}
+
+a {
+  font-size: 0.75rem;
+  color: var(--main-color);
+  padding: 0.75rem 0;
+  text-decoration: none;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #000000;
+  opacity: 0.5;
+  transition: all 0.15s;
+
+}
+
+h1 {
+  font-family: 'OpenSans';
+  font-weight: 600;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 2rem;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/* Media Styles */
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    transform: scale(1.15);
+    opacity: 1;
+  }
 }
