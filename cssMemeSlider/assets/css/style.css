@@ -104,7 +104,7 @@ footer {
   width: 100%;
   max-width: 60rem;
   min-height: 10rem;
-  overflow: visible;
+  overflow: hidden;
   border: 0.0625rem solid var(--border-color);
   border-radius: 1rem;
   margin-top: 2rem;
@@ -114,7 +114,7 @@ footer {
 
 .slider-wrapper {
   border-radius: 0.75rem;
-  overflow: visible;
+  overflow: hidden;
   border: 0.0625rem solid var(--border-color);
   aspect-ratio: 38 / 25;
 }
@@ -132,7 +132,6 @@ footer {
 .slide-item {
   width: 100%;
   overflow: hidden;
-  border: 0.0625rem solid green;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,6 +154,7 @@ footer {
 .slider-controls {
   display: flex;
   border: 0.0625rem solid yellow;
+  background-color: var(--main-bg-color);
 }
 
 .slider-control {
@@ -173,8 +173,38 @@ footer {
   background-color: var(--controls-color);
 }
 
+/* Slider Functional */
+#i1:checked ~ .slider-container > .slider-controls-wrapper > .slider-controls > .slider-control:nth-child(1) > .slider-control-circle,
+#i2:checked ~ .slider-container > .slider-controls-wrapper > .slider-controls > .slider-control:nth-child(2) > .slider-control-circle,
+#i3:checked ~ .slider-container > .slider-controls-wrapper > .slider-controls > .slider-control:nth-child(3) > .slider-control-circle,
+#i4:checked ~ .slider-container > .slider-controls-wrapper > .slider-controls > .slider-control:nth-child(4) > .slider-control-circle {
+  background-color: transparent;
+  border: 0.0625rem solid #71abfe;
+}
+
+#i1:checked ~ .slider-container .slider-length {
+  transform: translateX(0%);
+}
+
+#i2:checked ~ .slider-container .slider-length {
+  transform: translateX(calc(-1 * 100%));
+}
+
+#i3:checked ~ .slider-container .slider-length {
+  transform: translateX(calc(-2 * 100%));
+}
+
+#i4:checked ~ .slider-container .slider-length {
+  transform: translateX(calc(-3 * 100%));
+}
+
 /* Media Styles */
 @media (hover: hover) and (pointer: fine) {
+  .slider-control:hover .slider-control-circle {
+    background-color: var(--main-color);
+    border: 0.0625rem solid var(--main-color) !important;
+  }
+
   a:hover {
     transform: scale(1.15);
     opacity: 1;
