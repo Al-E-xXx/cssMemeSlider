@@ -18,7 +18,8 @@
   --main-color: #ffffff;
   --main-bg-color: #25282a;
   --second-bg-color: #c5c5c5;
-  --border-color: #383838;
+  --border-color: #909090;
+  --controls-color: #71abfe;
 }
 
 /* General Styles */
@@ -71,6 +72,10 @@ h1 {
 }
 
 main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 1 0 auto;
 }
 
@@ -84,6 +89,7 @@ footer {
 .container {
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +97,81 @@ footer {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* Slider Styles */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60rem;
+  min-height: 10rem;
+  overflow: visible;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  padding: clamp(0.5rem, calc(0.5rem + (20 - 8) * ((100vw - 20rem) / (896 - 320))), 1.25rem);
+  background-color: var(--main-bg-color);
+}
 
+.slider-wrapper {
+  border-radius: 0.75rem;
+  overflow: visible;
+  border: 0.0625rem solid var(--border-color);
+  aspect-ratio: 38 / 25;
+}
+
+.slider-radio {
+  display: none;
+}
+
+.slider-length {
+  display: flex;
+  height: 100%;
+  transition: all 0.4s;
+}
+
+.slide-item {
+  width: 100%;
+  overflow: hidden;
+  border: 0.0625rem solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.slider-controls-wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: clamp(0.5rem, calc(0.5rem + (20 - 8) * ((100vw - 20rem) / (896 - 320))), 1.25rem);
+}
+
+.slider-desc-wrapper {
+  border: 0.0625rem solid blue;
+  flex: 1 0 auto;
+}
+
+.slider-controls {
+  display: flex;
+  border: 0.0625rem solid yellow;
+}
+
+.slider-control {
+  display: block;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.slider-control-circle {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 0.0625rem solid var(--controls-color);
+  border-radius: 50%;
+  transition: all 0.4s;
+  background-color: var(--controls-color);
+}
 
 /* Media Styles */
 @media (hover: hover) and (pointer: fine) {

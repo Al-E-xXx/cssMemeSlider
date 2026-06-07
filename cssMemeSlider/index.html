@@ -7,7 +7,7 @@
   <title>CSS Meme Slider</title>
 
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="./favicon.ico" sizes="any">
 </head>
 
 <body>
@@ -16,7 +16,32 @@
       <h1>CSS Meme Slider</h1>
     </header>
     <main>
+      <input class="slider-radio" checked type="radio" name="slider-radio" id="i1">
+      <input class="slider-radio" type="radio" name="slider-radio" id="i2">
+      <input class="slider-radio" type="radio" name="slider-radio" id="i3">
+      <input class="slider-radio" type="radio" name="slider-radio" id="i4">
 
+      <div class="slider-container">
+        <div class="slider-wrapper">
+          <div class="slider-length">
+            <div class="slide-item">1</div>
+            <div class="slide-item">2</div>
+            <div class="slide-item">3</div>
+            <div class="slide-item">4</div>
+          </div>
+        </div>
+
+        <div class="slider-controls-wrapper">
+          <div class="slider-desc-wrapper"></div>
+
+          <div class="slider-controls">
+            <label class="slider-control" for="i1"><span class="slider-control-circle"></span></label>
+            <label class="slider-control" for="i2"><span class="slider-control-circle"></span></label>
+            <label class="slider-control" for="i3"><span class="slider-control-circle"></span></label>
+            <label class="slider-control" for="i4"><span class="slider-control-circle"></span></label>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <a class="copyright" href="https://github.com/Al-E-xXx/">
