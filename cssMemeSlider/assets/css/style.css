@@ -100,14 +100,14 @@ footer {
   border: 0.0625rem solid var(--border-color);
   border-radius: 1rem;
   margin-top: 2rem;
-  padding: clamp(0.5rem, calc(0.5rem + (20 - 8) * ((100vw - 20rem) / (896 - 320))), 1.25rem);
+  padding: clamp(1rem, calc(0.5rem + (20 - 8) * ((100vw - 20rem) / (896 - 320))), 1.25rem);
   background-color: var(--main-bg-color);
 }
 
 .slider-wrapper {
   border-radius: 0.75rem;
   overflow: hidden;
-  border: 0.0625rem solid var(--border-color);
+  border: 0.0625rem solid var(--main-bg-color);
   aspect-ratio: 38 / 25;
 }
 
@@ -226,5 +226,17 @@ footer {
   a:hover {
     transform: scale(1.15);
     opacity: 1;
+  }
+}
+
+@media only screen and (width <= 40rem) {
+  .slider-controls-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .slider-controls {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
 }
